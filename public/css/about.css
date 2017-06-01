@@ -1,0 +1,28 @@
+body{
+  background-color: lightblue;
+  font-family: sans-serif;
+  text-align: justify;
+}
+.abt_g,.info{
+  margin: 0 auto;
+  width: 50%;
+}
+.title{
+  text-align: center;
+  font-size: 30px;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.info{
+  margin-top: 50px;
+}
+@media (max-width:1100px){
+  .abt_g,.info{
+    margin: 0 auto;
+    width: 80%;
+  }
+}

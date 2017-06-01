@@ -1,0 +1,72 @@
+.imgusr{
+  width: 80px;
+  height: 100px;
+  margin-top: 10px
+}
+body{
+  min-width: 98vw;
+  background-color: lightblue;
+  font-family: sans-serif;
+}
+#resultados{
+  width: 600px;
+  margin: 0 auto;
+
+}
+.Rank{
+  border: 3px solid #008CBA;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.num_rnk{
+  float: left;
+  margin-top: 7.5%;
+  font-size: 23px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.nme_usr{
+  margin: 0 auto;
+  width: 200px;
+  height: 50%;
+  margin-top: -65px;
+  margin-bottom: 50px;
+}
+.pnts{
+  width:50px;
+  text-align: center;
+  float: right;
+  margin-top: -80px;
+  margin-right: 80px;
+}
+.pnts_n{
+  margin: 0;
+  margin-top: 5px;
+}
+.title{
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.dec{
+  width: 50px;
+  float:left;
+  transform: rotate(90deg);
+}
+.dec2{
+  width: 50px;
+  float:right;
+  margin-top: -60px;
+  transform: rotate(-180deg);
+}
+.p{
+  background-color: gold !important;
+}
+.s{
+  background-color: silver !important;
+}
+.t{
+  background-color: #A67D3D !important;
+}

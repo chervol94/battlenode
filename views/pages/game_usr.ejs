@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%include ../partials/head %>
+    <script src="/socket.io/socket.io.js" charset="UTF-8"></script>
+    <script src="/library/snap.svg-min.js" charset="UTF-8"></script>
+    <script src="/library/jquery.min.js"></script>
+    <script src="/js/game_usr/game_usr.js" charset="UTF-8"></script>
+    <script src="/jquery/tablero.js"></script><!--Codigo referente a tablero, colocacion de barcos y sus limites-->
+    <link href="/css/game_usr.css" rel="stylesheet"></link>
+  </head>
+  <body>
+    <!--<button type="button" onclick="return turno()">Ejecutar</button>-->
+    <img class=usr id="imgUsr"></img>
+    <p id="nombreUsr"></p>
+    <img class=usr id="imgEn"></img>
+    <p id="nombreEn"></p>
+    <p id="status">Esperando Enemigo</p>
+    <!--<img id="water" src="/images/water.jpg"></img>-->
+    <svg id="snap">
+    </svg>
+    <div id="selboat">
+      <img id="b2" class="boatbtn"></img>
+      <p id="b2res"class="rest">1</p>
+      <img id="b3" class="boatbtn"></img>
+      <p id="b3res"class="rest">1</p>
+      <img id="b4" class="boatbtn"></img>
+      <p id="b4res"class="rest">1</p>
+      <img id="b5" class="boatbtn"></img>
+      <p id="b5res"class="rest">1</p>
+      <img id="rotate" class="boatbtn"></img>
+      <p id="posact"class="rest">1</p>
+    </div>
+    <div class="msg_grp">
+    <div id="messages"></div>
+  	<br/>
+  	<form onsubmit="return addMessage(this)">
+  		<input type="text" id="texto" placeholder="Mensaje">
+  		<input id="mes" type="submit" value="Enviar">
+  	</form>
+    </div>
+    <img id="b2d1"></img>
+    <img id="b2d2"></img>
+    <img id="b3d1"></img>
+    <img id="b3d2"></img>
+    <img id="b3d3"></img>
+    <img id="b4d1"></img>
+    <img id="b4d2"></img>
+    <img id="b5d1"></img>
+  </body>
+</html>

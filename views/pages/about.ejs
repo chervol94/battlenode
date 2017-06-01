@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%include ../partials/head %>
+    <link href="/css/about.css" rel="stylesheet"></link>
+  </head>
+  <body>
+    <div class="abt_g">
+   <p class="title">Información</p>
+     <p>El juego consiste en hundir la flota de barcos del contrincante
+        antes de que el haga lo propio</p>
+     <p>Cada jugador poseé dos tableros, uno en el que colocara sus propios
+     barcos y otro en el cual efectuara los disparos</p>
+     <p>En esta iteración cada jugador poseé un total de 8 barcos, repartidos
+     de la siguiente manera:</p>
+     <ul>
+         <li>2 barcos de un tamaño de dos casillas, llamados Patrullas</li>
+         <li>3 barcos de un tamaño de tres casillas, llamados Destructores</li>
+         <li>2 barcos de un tamaño de cuatro casillas, llamados Submarinos</li>
+         <li>1 barco de un tamaño de cinco casillas, llamado Barco de Guerra o Battleship</li>
+     </ul>
+     <p>Los barcos deben ser colocados Horizontalmente o Verticalmente y no podran
+     sobresalir del tablero</p>
+     <p> Para colocar los barcos se seleccionara el barco que se desea colocar de los que hay en la barra debajo del tablero del jugador,
+       para cambiar la orientación de este, se tendra que hacer clic en el botón de rotación.</p>
+     <p> Los barcos se colocaran mediante clic en el tablero propio, si el barco se coloca en Horizontal se contara desde la posicion seleccionada
+       hacia la derecha, si se coloca verticalmente, se colocara hacia abajo de la posicion seleccionada (siempre incluyendo la posicion en la que se ha hecho clic).
+     <p>Una vez colocados todos los barcos los indicadores se volverán en verde y el primer jugador en acceder a la partida será el primero en efectuar un disparo</p>
+     <p>Se indicaran eventos concretos en la zona de mensajes en la parte superior central de la interficie de juego</p>
+     <p>Los barcos no podrán ser colocados en una misma casilla, una vez un barco está
+     colocado en una casilla no se podrá mover de sitio</p>
+     <p>En esta versión se permite que los barcos sean colocados unos a lado de los otros,
+       para asi aumentar la estrategia de colocación de cada jugador.</p>
+     <p>Los jugadores podrán elegir, al entrar (si son jugadores) su nombre, y se les asignara una foto de manera aleatoria, si el jugador no
+       introduce nombre se le asignara uno aleatoriamente.</p>
+     <p>Los disparos se realizarán de manera alterna entre ambos jugadores, nunca realizando
+       mas de un disparo seguido por jugador</p>
+     <p>No habrá limite de disparos, significando eso que una partida solo finalizará cuando
+     haya un vencedor o cuando un jugador se desconecte.</p>
+     <p>Solo se podrá realizar una partida a la vez y no se permitirá acceder a otras personas a la sesión
+     para evitar asi posibles trampas</p>
+     <p>Los disparos serán representados por los colores "Cyan" significando agua y "Rojo" significando tocado,
+     no se indicará si el barco ha sido hundido o no para asi dificultar más la partida</p>
+     <p>El ganador será aquel jugador que hunda antes los barcos del enemigo</p>
+     <p>Una vez finalizada la partida, el jugador ganador tendra la posibilidad de tener sus datos mostrados en el Ranking
+     general de puntuaciones, siempre y cuando su partida sea mejor que las previamente mostradas en susodicho Ranking</p>
+     <p>En la instancia de la partida se encuentra un chat en el cual ambos jugadores podrán comunicarse, se recomienda encarecidamente no dar pistas
+     ni ayudas a otro jugador si no se quiere arruinar la experiencia de juego</p>
+     <p> DEV COMMAND: /dev-end para finalizar el juego de manera rapida<p>
+     </div>
+     <div class="info">
+     <p class="left">Desarrollado por: Joan Jiménez</p> <p class="right">2º DAW - INS La Pineda 2016/2017</p>
+    </div>
+  </body>
+</html>

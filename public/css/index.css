@@ -1,0 +1,33 @@
+body{
+  /*width: 100vw;
+  height: 100vh;*/
+  background-color: lightblue;
+}
+.logomain{
+  width: 1000px;
+}
+.logo_cnt{
+  width: 1000px;
+  margin: 0 auto;
+}
+.btn_grp{
+  width: 300px;
+  margin: 0 auto;
+}
+button{
+  background-color:#008CBA;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width:200px;
+  margin-top: 18px;
+  border-radius: 8px;
+  color:white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+button:hover{
+  cursor: pointer;
+  background-color: #026282;
+}
