@@ -6,14 +6,13 @@ window.onload = function(){
   audio.loop = true;//Indicamos que la reproduzca en loop
   checkAvailable();//Comprobamos la disponibilidad del juego
   var board = Snap(snap);//Creamos una variable para trabajar con Snap.svg
-  var board2 = Snap(snap2);
   ArrCeldas = [];//Array que alamacenara las celdas de el campo
   ArrCeldasEn = [];//Array que almacenara las celdas del enemigo
   var pos = 0;//Posicion de las celdas en el array
   createBoard(0,0,"transparent");//Creamos un tablero
   createPilot(470,25,"red");
-  createBoard2(50,0,"transparent");//Creamos otro tablero
-  createPilot2(25,25,"red");
+  createBoard2(1350,0,"transparent");//Creamos otro tablero
+  createPilot2(1325,25,"red");
   //alert(socket.url);
   function checkAvailable(){
     var reta;
@@ -78,7 +77,7 @@ window.onload = function(){
   });
   socket.on("YourTurn",function(){//Cuando el servidor nos indica que es nuestro turno
     $("#status").html("Misiles preperados, nuestro momento de atacar!");//Avisamos de que es nuestro turno
-    $("#statusT").html("&zwnj;");
+    $("#statusT").html("");
   });
   socket.on("NotYourTurn",function(){//Cuando el servidor nos inica que no es nuestro turno
     $("#status").html("Nos ataca el enemigo!");//Lo mostramos al usuario
@@ -112,8 +111,8 @@ window.onload = function(){
   function createPilot2(x,y,color){//Lo mismo que la anterior pero con las cordenadas adecuadas para colocarlo en el tablero del enemigo
     var xt = parseInt(x)-20;
     var yt = parseInt(y)-10;
-    board2.text(xt,yt,"Listo");
-    pilotEn = board2.circle(x,y,8).attr({
+    board.text(xt,yt,"Listo");
+    pilotEn = board.circle(x,y,8).attr({
       fill:color,
       stroke:"black",
       strokewidth:"1px",
@@ -143,7 +142,7 @@ window.onload = function(){
     var ya = yi;//Coordenadas y igualada a la que recibe para poder tener coord. originales y poder manipularlas a la vez
     for(x=0;x<9;x++){
       for(y=0;y<9;y++){
-        var cel = board2.rect(xa,ya,50,50).attr({//Creamos la celda y le aplicamos propiedades visuales
+        var cel = board.rect(xa,ya,50,50).attr({//Creamos la celda y le aplicamos propiedades visuales
           fill:color,
           stroke:"#83f33b",
           strokewidth:"1px",

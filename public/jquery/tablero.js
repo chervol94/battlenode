@@ -412,6 +412,7 @@ $(document).ready(function(){
   $("#b4").attr("src","/images/barcos/b4.png");//Aplicamos la URL a la imagen ya que no se puede definir desde HTML sin que de error de ArrCeldas not defined, pese a que este definido
   $("#b5").attr("src","/images/barcos/b5.png");//Aplicamos la URL a la imagen ya que no se puede definir desde HTML sin que de error de ArrCeldas not defined, pese a que este definido
   $("#snap").attr("style","background-image: url(/images/pruebafondo.jpg)");//Aplicamos la URL a la imagen ya que no se puede definir desde HTML sin que de error de ArrCeldas not defined, pese a que este definido
+  $("#snap2").attr("style","background: url(/images/pruebafondo.jpg) 501px 0px");
   $("#rotate").attr("src","/images/barcos/rotate.png");//Aplicamos la URL a la imagen ya que no se puede definir desde HTML sin que de error de ArrCeldas not defined, pese a que este definido
   $("#b2d1").attr("src","/images/barcos/b2.png");//Aplicamos la URL a la imagen ya que no se puede definir desde HTML sin que de error de ArrCeldas not defined, pese a que este definido
   $("#b2d2").attr("src","/images/barcos/b2.png");//Aplicamos la URL a la imagen ya que no se puede definir desde HTML sin que de error de ArrCeldas not defined, pese a que este definido

@@ -16,15 +16,10 @@
     <img class=usr id="imgEn"></img>
     <p id="nombreEn"></p>
     <p id="status">Esperando Enemigo</p>
-    <p id="statusT">&zwnj;</p>
+    <p id="statusT"></p>
     <!--<img id="water" src="/images/water.jpg"></img>-->
-    <div id="csnap">
-      <svg id="snap">
-      </svg>
-      <svg id="snap2">
-      </svg>
-    </div>
-
+    <svg id="snap">
+    </svg>
     <div id="selboat">
       <img id="b2" class="boatbtn"></img>
       <p id="b2res"class="rest">1</p>

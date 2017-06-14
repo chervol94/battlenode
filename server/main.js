@@ -70,9 +70,13 @@ io.on('connection', function(socket) {//Cuando se realiza una connexion
 							hitted = 1;// Se indica tocado
 							console.log("El barco "+ArrayShipsJ2[z].getTipo()+" ha sido tocado, tiros realizados:"+tiroJ1);
 							ArrayShipsJ2[z].addDamage();//Se le suma daño a ese barco
+							socket.emit("MsgTocado");
 							var hundido = ArrayShipsJ2[z].checkSunk();//Se comprueba si se ha hundido
 							console.log("Ha sido hundido? -> "+hundido);
 							if(hundido == true){//Si se ha hundido
+								//
+								socket.emit("MsgHundido");
+								//
 								for(var f = 0;f<ArrayShipsJ2.length;f++){//Recorremos todo el array de objetos en busca del estado de cada barco
 									if(ArrayShipsJ2[f].checkSunk() == false){//Si uno solo de esos barcos no ha sido hundido significa que la partida no ha acabado
 										notend = 1;//Indicamos que la partida sigue
@@ -99,6 +103,7 @@ io.on('connection', function(socket) {//Cuando se realiza una connexion
 		    }
 				if(hitted==0){//En el caso de que el barco no haya sido tocado
 					console.log("Agua, tiros realizados por el jugador: "+tiroJ1);
+					socket.emit("MsgAgua");
 					io.to(sesiones[1]).emit("ShipNotDamaged",ret);////Emitimos al cliente que ha sido atacado que en esa posicion de sus barcos se ha realizado un tiro al agua
 					io.to(sesiones[1]).emit("YourTurn");//Indicamos a ese mismo cliente que ahora es su turno
 					io.to(sesiones[0]).emit("NotYourTurn");//Y hacemos lo mismo con el lciente que acaba de disparar indicandole que le van a disparar
@@ -114,9 +119,11 @@ io.on('connection', function(socket) {//Cuando se realiza una connexion
 							hitted = 1;
 							console.log("El barco "+ArrayShipsJ1[z].getTipo()+" ha sido tocado, tiros realizados:"+tiroJ2);
 							ArrayShipsJ1[z].addDamage();
+							socket.emit("MsgTocado");
 							var hundido = ArrayShipsJ1[z].checkSunk();
 							console.log("Ha sido hundido? -> "+hundido);
 							if(hundido == true){
+								socket.emit("MsgHundido");
 								for(var f = 0;f<ArrayShipsJ1.length;f++){
 									if(ArrayShipsJ1[f].checkSunk() == false){
 										notend = 1;
@@ -142,6 +149,7 @@ io.on('connection', function(socket) {//Cuando se realiza una connexion
 		    }
 				if(hitted==0){
 					console.log("Agua, tiros realizados por el jugador: "+tiroJ2);
+					socket.emit("MsgAgua");
 					io.to(sesiones[0]).emit("ShipNotDamaged",ret);
 					io.to(sesiones[0]).emit("YourTurn");
 					io.to(sesiones[1]).emit("NotYourTurn");

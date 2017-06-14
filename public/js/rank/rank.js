@@ -1,4 +1,4 @@
-var socket = io.connect("192.168.12.129:8080",{"forceNew":true});
+var socket = io.connect("192.168.1.11:8080",{"forceNew":true});
 
 function representData(data){
   //alert(data.length);
