@@ -1,4 +1,4 @@
-var socket = io.connect("192.168.1.11:8080",{"forceNew":true});//Abrimos una conexion con el servidor
+var socket = io.connect("192.168.12.138:8080",{"forceNew":true});//Abrimos una conexion con el servidor
 
 window.onload = function(){
   var audio = new Audio("../../sound/music.wav");//Creamos el elemento que reproducira la cancion de fondo
@@ -36,7 +36,7 @@ window.onload = function(){
   });
   socket.on("gameintr",function(ret){//Cuando recibimos la respuesta
     alert("Enemigo desconectado, volviendo a la pantalla de inicio");//Avisamos al jugador
-    window.location.replace("http://192.168.1.11:8080");//Lo rederigimos a la raiz de la web
+    window.location.replace("http://192.168.12.138:8080");//Lo rederigimos a la raiz de la web
   });
   function generateImg(){//Generamos la imagen del usuario
     socket.emit("generateImg");//Emitimos al servidor el evento
@@ -47,7 +47,7 @@ window.onload = function(){
   socket.on("checkAvailableRet",function(reta){//Cuando el servidor emite la respuesta a checkAvailable ejecutamos esta funcion
     if(reta == 0){// Si la respesta del servidor es negativa
       alert("Lo sentimos, ya hay una partida en proceso");//Avisamos al jugador de que no puede jugar aun
-      window.location.replace("http://192.168.1.11:8080");  //Redirigimos a la raiz.
+      window.location.replace("http://192.168.12.138:8080");  //Redirigimos a la raiz.
     }else{
         generateName();//Sino permitimos el acceso y generamos el nombre de usuario
         generateImg();//Generamos la imagen de usuario
@@ -67,17 +67,17 @@ window.onload = function(){
   });
   socket.on("EndGameWin",function(){//Indicamos al cliente que gana
     alert("Has ganado, enhorabuena, entras en el Ranking");
-    window.location.replace("http://192.168.1.11:8080/rank")//redirigimos al ranking
+    window.location.replace("http://192.168.12.138:8080/rank")//redirigimos al ranking
   });
   socket.on("EndGameLose",function(){//Indicamos al cliente que pierde
     alert("Has perdido, desgraciadamente no entras en el Ranking");
-    window.location.replace("http://192.168.1.11:8080");//redirigimos a raiz
+    window.location.replace("http://192.168.12.138:8080");//redirigimos a raiz
   });
   socket.on("StartGame",function(){//Cuando el servidor emite Start Game
     $("#status").html("Empieza el juego");//Anunciamos que empieza el juego
   });
   socket.on("YourTurn",function(){//Cuando el servidor nos indica que es nuestro turno
-    $("#status").html("Misiles preperados, nuestro momento de atacar!");//Avisamos de que es nuestro turno
+    $("#status").html("Nos toca atacar!");//Avisamos de que es nuestro turno
     $("#statusT").html("&zwnj;");
   });
   socket.on("NotYourTurn",function(){//Cuando el servidor nos inica que no es nuestro turno
